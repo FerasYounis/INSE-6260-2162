@@ -47,7 +47,8 @@ public class SHAImplementation implements SHAInterface {
 	@Override
 	public void matchApp() {
 		// TODO Auto-generated method stub
-		Arrays.sort(nurseList.toArray());
+		Nurse[] sortedNurses = nurseList.toArray(new Nurse[0]);
+		Arrays.sort(sortedNurses);
 
 	}
 
