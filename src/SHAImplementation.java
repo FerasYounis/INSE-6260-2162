@@ -1,42 +1,66 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class SHAImplementation implements SHAInterface{
+import Enums.Gender;
+import Enums.Language;
+import Enums.Location;
+import Enums.TimeSlot;
+import Enums.TypeOfRequest;
+import profiles.Nurse;
+import profiles.Patient;
+
+public class SHAImplementation implements SHAInterface {
+
+	private List<Patient> patientList = new ArrayList<>();
+	private List<Nurse> nurseList = new ArrayList<>();
 
 	@Override
 	public void patientsRegisterting(String firstName, String lastName, String email, String password,
-			String patientGender, String location, String specailCase) {
-		// TODO Auto-generated method stub
-		
+			Gender patientGender, Location location, String specailCase) {
+
+		Patient patient = new Patient(firstName, lastName, email, password, patientGender, location, specailCase);
+		patientList.add(patient);
+	}
+
+	@Override
+	public void nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
+			Location location, List<TypeOfRequest> typeOfRequest) {
+		Nurse nurse = new Nurse(firstName, lastName, email, password, nurseGender, location, typeOfRequest);
+		nurseList.add(nurse);
+
 	}
 
 	@Override
 	public boolean patientLogLin(String userName, String password) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
-	public String RequestApp(String loggedin, String nyrseG, String time, String severity, String language,
-			String typeCareService, String comment) {
-		// TODO Auto-generated method stub
+	public String RequestApp(Patient patient, Gender nurseG, TimeSlot app, String severity, Language language,
+			TypeOfRequest typeCareService, String comment) {
+
 		return null;
 	}
 
 	@Override
 	public void matchApp() {
 		// TODO Auto-generated method stub
-		
+		Arrays.sort(nurseList.toArray());
+
 	}
 
 	@Override
 	public void cancelApp(String loggedin, String requestID) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void availabilityUpdate(String loggedin, String schedule) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

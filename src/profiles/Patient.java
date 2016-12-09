@@ -2,24 +2,27 @@ package profiles;
 
 import java.util.UUID;
 
+import Enums.Gender;
+import Enums.Location;
+
 public class Patient {
 	/**
 	 * 
 	 */
-	
+
 	private static final long serialVersionUID = -4575375139164741007L;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
-	private String patientGender;
-	private enum Location{Montreal, Laval};
+	private Gender patientGender;
 	private String specailCase;
 	private Location location;
 	private static String patientID;
-	
-	public Patient(String firstName, String lastName, String email, String password, String patientGender, Location location, String specailCase) {
-	
+
+	public Patient(String firstName, String lastName, String email, String password, Gender patientGender,
+			Location location, String specailCase) {
+
 		patientID = UUID.randomUUID().toString();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -28,55 +31,45 @@ public class Patient {
 		this.patientGender = patientGender;
 		this.location = location;
 		this.specailCase = specailCase;
-	} 
-	
-	public String getFirstName(){
+	}
+
+	public String getFirstName() {
 		return firstName;
 	}
-	
-	public String getLastName(){
+
+	public String getLastName() {
 		return lastName;
 	}
-	
-	public String getPatientID(){
+
+	public String getPatientID() {
 		return patientID;
 	}
-	
-	public String getPassword(){
+
+	public String getPassword() {
 		return password;
 	}
-	
-	public Location getLocation(){
+
+	public Location getLocation() {
 		return location;
 	}
-	
-	public String getPatientGender(){
+
+	public Gender getPatientGender() {
 		return patientGender;
 	}
-	
-	public String getEmail(){
+
+	public String getEmail() {
 		return email;
 	}
-	
-	public String getSpecailCase(){
+
+	public String getSpecailCase() {
 		return specailCase;
 	}
-	
+
 	public String toString() {
-        return "Passenger{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", patientID='" + patientID + '\'' +
-                ", location='" + location + '\'' +
-                ", patientGender='" + patientGender + '\'' +
-                ", specailCase='" + specailCase + '\'' +
-                ", email='" + email + '\'' +
-                ", password= ***********'"  + '\'' +
-                '}';
-	
-	
-	
-	
-	
-}
+		return "Passenger{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", patientID='"
+				+ patientID + '\'' + ", location='" + location + '\'' + ", patientGender='" + patientGender + '\''
+				+ ", specailCase='" + specailCase + '\'' + ", email='" + email + '\'' + ", password= ***********'"
+				+ '\'' + '}';
+
+	}
 }
