@@ -73,6 +73,19 @@ public class SHAImplementation implements SHAInterface {
 		return false;
 		
 	}
+	@Override
+	public boolean AgencyLogLin(String userName, String password) {
+		
+		if(adminName.equals(userName) && adminPassword.equals(password)){
+			System.out.println("Credentials Accepted.");
+			return true;
+		}else {
+			System.out.println("Wrong! Username or/and Password\n");
+			System.out.println("Please try again!");
+		}
+		return false;
+	}
+
 
 	@Override
 	public String RequestApp(Patient patient, Gender nurseG, TimeSlot app, String severity, Language language,
@@ -106,5 +119,6 @@ public class SHAImplementation implements SHAInterface {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
