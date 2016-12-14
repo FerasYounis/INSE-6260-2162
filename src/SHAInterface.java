@@ -16,6 +16,7 @@ public interface SHAInterface {
 			Location location, List<TypeOfRequest> typeOfRequest);
 
 	public boolean patientLogLin(String userName, String password);
+	public boolean nurseLogLin(String userName, String password);
 
 	public String RequestApp(Patient patient, Gender nurseG, TimeSlot app, String severity, Language language,
 			TypeOfRequest typeCareService, String comment);

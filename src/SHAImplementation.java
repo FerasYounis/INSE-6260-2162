@@ -14,6 +14,8 @@ public class SHAImplementation implements SHAInterface {
 
 	private List<Patient> patientList = new ArrayList<>();
 	private List<Nurse> nurseList = new ArrayList<>();
+	private String adminName = "admin";
+	private String adminPassword = "admin123";
 
 	@Override
 	public void patientsRegisterting(String firstName, String lastName, String email, String password,
@@ -34,7 +36,42 @@ public class SHAImplementation implements SHAInterface {
 	@Override
 	public boolean patientLogLin(String userName, String password) {
 
+		for (Patient patient : patientList) {
+
+			if (patient.getFirstName().equals(userName) && patient.getPassword().equals(password)) {
+
+				System.out.println("Credentials Accepted.");
+				return true;
+
+			} else {
+				System.out.println("Wrong! Username or/and Password\n");
+				System.out.println("Please try again!");
+
+			}
+
+		}
 		return false;
+	}
+
+	@Override
+	public boolean nurseLogLin(String userName, String password) {
+
+		for (Nurse nurse : nurseList) {
+
+			if (nurse.getFirstName().equals(userName) && nurse.getPassword().equals(password)) {
+
+				System.out.println("Credentials Accepted.");
+				return true;
+
+			} else {
+				System.out.println("Wrong! Username or/and Password\n");
+				System.out.println("Please try again!");
+
+			}
+
+		}
+		return false;
+		
 	}
 
 	@Override
