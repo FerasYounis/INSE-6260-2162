@@ -1,5 +1,7 @@
 package profiles;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import Enums.Gender;
@@ -19,6 +21,7 @@ public class Patient {
 	private String specailCase;
 	private Location location;
 	private static String patientID;
+	private List<Request> requests;
 
 	public Patient(String firstName, String lastName, String email, String password, Gender patientGender,
 			Location location, String specailCase) {
@@ -31,6 +34,7 @@ public class Patient {
 		this.patientGender = patientGender;
 		this.location = location;
 		this.specailCase = specailCase;
+		requests = new ArrayList<>();
 	}
 
 	public String getFirstName() {
@@ -63,6 +67,14 @@ public class Patient {
 
 	public String getSpecailCase() {
 		return specailCase;
+	}
+
+	public List<Request> getRequests() {
+		return requests;
+	}
+
+	public void addRequest(Request request) {
+		requests.add(request);
 	}
 
 	public String toString() {

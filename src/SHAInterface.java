@@ -13,12 +13,12 @@ public interface SHAInterface {
 			Gender patientGender, Location location, String specailCase);
 
 	public void nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
-			Location location, List<TypeOfRequest> typeOfRequest);
+			Location location, List<TypeOfRequest> typeOfRequest, Language language);
 
 	public boolean patientLogLin(String userName, String password);
-	
+
 	public boolean nurseLogLin(String userName, String password);
-	
+
 	public boolean AgencyLogLin(String userName, String password);
 
 	public String RequestApp(Patient patient, Gender nurseG, TimeSlot app, String severity, Language language,
@@ -26,9 +26,9 @@ public interface SHAInterface {
 
 	public void matchApp();
 
-	public void cancelApp( String requestID);
+	public void cancelApp(String id, String requestID);
 
-	public void availabilityUpdate( String schedule);
+	public void availabilityUpdate(int slot, String status);
 
 	public String viewStatus(String loggedin, String requestID);
 }

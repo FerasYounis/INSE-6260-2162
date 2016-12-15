@@ -4,6 +4,7 @@ import java.util.List;
 
 import Enums.AvailableTimeStatusNures;
 import Enums.Gender;
+import Enums.Language;
 import Enums.Location;
 import Enums.TypeOfRequest;
 
@@ -21,9 +22,10 @@ public class Nurse implements Comparable<Nurse> {
 	private static String nurseID;
 	private static int counter = 0;
 	private NurseTimeSlot[] schedule;
+	private Language language;
 
 	public Nurse(String firstName, String lastName, String email, String password, Gender nurseGender,
-			Location location, List<TypeOfRequest> typeOfRequest) {
+			Location location, List<TypeOfRequest> typeOfRequest, Language language) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -39,6 +41,7 @@ public class Nurse implements Comparable<Nurse> {
 				new NurseTimeSlot(AvailableTimeStatusNures.NOTWORKING),
 				new NurseTimeSlot(AvailableTimeStatusNures.NOTWORKING),
 				new NurseTimeSlot(AvailableTimeStatusNures.NOTWORKING) };
+		this.language = language;
 
 	}
 
@@ -62,7 +65,7 @@ public class Nurse implements Comparable<Nurse> {
 		return location;
 	}
 
-	public Gender NurseGender() {
+	public Gender getNurseGender() {
 		return nurseGender;
 	}
 
@@ -121,6 +124,14 @@ public class Nurse implements Comparable<Nurse> {
 			return -1;
 		}
 
+	}
+
+	public Language getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Language language) {
+		this.language = language;
 	}
 
 }

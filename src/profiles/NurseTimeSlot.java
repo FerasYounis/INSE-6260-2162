@@ -4,26 +4,31 @@ import Enums.AvailableTimeStatusNures;
 
 public class NurseTimeSlot {
 	private AvailableTimeStatusNures status;
-	private Patient patient;
+	private Request request;
 
-	public NurseTimeSlot(AvailableTimeStatusNures status,Patient patient){
+	public NurseTimeSlot(AvailableTimeStatusNures status, Request request) {
 		this.status = status;
-		this.patient = patient;
+		this.request = request;
 	}
-	public NurseTimeSlot(AvailableTimeStatusNures status){
-		this(status,null);
+
+	public NurseTimeSlot(AvailableTimeStatusNures status) {
+		this(status, null);
 	}
+
 	public AvailableTimeStatusNures getStatus() {
 		return status;
 	}
+
 	public void setStatus(AvailableTimeStatusNures status) {
 		this.status = status;
 	}
-	public Patient getPatient() {
-		return patient;
+
+	public Request getRequest() {
+		return request;
 	}
-	public void setPatient(Patient patient) {
-		this.patient = patient;
+
+	public void setRequest(Request request) {
+		this.request = request;
 	}
 
 }
