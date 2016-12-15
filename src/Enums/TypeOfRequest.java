@@ -1,6 +1,6 @@
 package Enums;
 
-public enum TypeOfRequest {
+public enum TypeOfRequest  {
 	
 	BooldCar,
 	SeniorCare,

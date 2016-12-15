@@ -5,19 +5,21 @@ import Enums.Language;
 import Enums.Location;
 import Enums.TimeSlot;
 import Enums.TypeOfRequest;
+import profiles.Login;
+import profiles.Nurse;
 import profiles.Patient;
 
 public interface SHAInterface {
 
-	public void patientsRegisterting(String firstName, String lastName, String email, String password,
+	public Patient patientsRegisterting(String firstName, String lastName, String email, String password,
 			Gender patientGender, Location location, String specailCase);
 
-	public void nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
+	public Nurse nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
 			Location location, List<TypeOfRequest> typeOfRequest, Language language);
 
-	public boolean patientLogLin(String userName, String password);
+	public Login patientLogLin(String userName, String password);
 
-	public boolean nurseLogLin(String userName, String password);
+	public Login nurseLogLin(String userName, String password);
 
 	public boolean AgencyLogLin(String userName, String password);
 

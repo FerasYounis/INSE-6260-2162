@@ -9,6 +9,7 @@ import Enums.Location;
 import Enums.RequestStatus;
 import Enums.TimeSlot;
 import Enums.TypeOfRequest;
+import profiles.Login;
 import profiles.Nurse;
 import profiles.Patient;
 import profiles.Request;
@@ -22,30 +23,34 @@ public class SHAImplementation implements SHAInterface {
 	private String adminPassword = "admin123";
 
 	@Override
-	public void patientsRegisterting(String firstName, String lastName, String email, String password,
+	public Patient patientsRegisterting(String firstName, String lastName, String email, String password,
 			Gender patientGender, Location location, String specailCase) {
 
 		Patient patient = new Patient(firstName, lastName, email, password, patientGender, location, specailCase);
 		patientList.add(patient);
+		System.out.println("New Patient been: "+ patient);
+		return patient;
 	}
 
 	@Override
-	public void nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
+	public Nurse nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
 			Location location, List<TypeOfRequest> typeOfRequest, Language language) {
 		Nurse nurse = new Nurse(firstName, lastName, email, password, nurseGender, location, typeOfRequest, language);
 		nurseList.add(nurse);
+		return nurse;
 
 	}
 
 	@Override
-	public boolean patientLogLin(String userName, String password) {
+	public Login patientLogLin(String userName, String password) {
 
 		for (Patient patient : patientList) {
 
 			if (patient.getFirstName().equals(userName) && patient.getPassword().equals(password)) {
 
 				System.out.println("Credentials Accepted.");
-				return true;
+				Login patientLogin = new Login(true,patient);
+				return patientLogin ;
 
 			} else {
 				System.out.println("Wrong! Username or/and Password\n");
@@ -54,18 +59,19 @@ public class SHAImplementation implements SHAInterface {
 			}
 
 		}
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean nurseLogLin(String userName, String password) {
+	public Login nurseLogLin(String userName, String password) {
 
 		for (Nurse nurse : nurseList) {
 
 			if (nurse.getFirstName().equals(userName) && nurse.getPassword().equals(password)) {
 
 				System.out.println("Credentials Accepted.");
-				return true;
+				Login nurseLogin = new Login(true,nurse);
+				return nurseLogin ;
 
 			} else {
 				System.out.println("Wrong! Username or/and Password\n");
@@ -74,7 +80,7 @@ public class SHAImplementation implements SHAInterface {
 			}
 
 		}
-		return false;
+		return null;
 
 	}
 
@@ -94,8 +100,10 @@ public class SHAImplementation implements SHAInterface {
 	@Override
 	public String RequestApp(Patient patient, Gender nurseG, TimeSlot app, String severity, Language language,
 			TypeOfRequest typeCareService, String comment) {
+		Request request = new Request( patient,  nurseG,   app,   severity,   language,
+			  typeCareService,   comment);
 
-		return null;
+		return request.getRequestID();
 	}
 
 	@Override

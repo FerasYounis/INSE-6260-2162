@@ -3,5 +3,6 @@ package Enums;
 public enum Location {
 
 	Montreal, 
-	Laval
+	Laval,
+	South_shore
 }

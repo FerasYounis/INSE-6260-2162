@@ -120,6 +120,10 @@ public class Request {
 	public static void setRequestID(String requestID) {
 		Request.requestID = requestID;
 	}
+	
+	public static String getRequestID(){
+		return requestID;
+	}
 
 	public Nurse getAssignedNurse() {
 		return assignedNurse;
