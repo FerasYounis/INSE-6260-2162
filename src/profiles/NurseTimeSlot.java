@@ -33,7 +33,12 @@ public class NurseTimeSlot {
 
 	@Override
 	public String toString() {
-		return "NurseTimeSlot [status=" + status + ", request=" + request + "]";
+
+		String requestStr = "null";
+		if (request != null) {
+			requestStr = request.toString();
+		}
+		return "NurseTimeSlot [status=" + status + ", request=" + requestStr + "]";
 	}
 
 }

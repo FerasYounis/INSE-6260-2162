@@ -1,6 +1,5 @@
 package profiles;
 
-import java.util.Arrays;
 import java.util.List;
 
 import Enums.AvailableTimeStatusNures;
@@ -110,7 +109,7 @@ public class Nurse implements Comparable<Nurse> {
 	public String toString() {
 		return "Nurse [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password="
 				+ password + ", nurseGender=" + nurseGender + ", typeOfRequest=" + typeOfRequest + ", location="
-				+ location + ", schedule=" + Arrays.toString(schedule) + ", language=" + language + "]";
+				+ location + ", language=" + language + "]";
 	}
 
 	public int compareTo(Nurse compareNurse) {

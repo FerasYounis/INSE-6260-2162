@@ -143,7 +143,11 @@ public class Request {
 
 	@Override
 	public String toString() {
-		return "Request [patient=" + patient + ", assignedNurse=" + assignedNurse + ", nurseG=" + nurseG + ", app="
+		String assignedNurseStr = "null";
+		if (assignedNurse != null) {
+			assignedNurseStr = assignedNurse.toString();
+		}
+		return "Request [patient=" + patient + ", assignedNurse=" + assignedNurseStr + ", nurseG=" + nurseG + ", app="
 				+ app + ", severity=" + severity + ", language=" + language + ", typeCareService=" + typeCareService
 				+ ", comment=" + comment + ", status=" + status + "]";
 	}

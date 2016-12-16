@@ -179,5 +179,12 @@ public class SHAImplementation implements SHAInterface {
 		for (Nurse nurse : nurseList) {
 			System.out.println(nurse);
 		}
+
+		for (Request request : requestList) {
+			System.out.println("viewStatuses called request");
+			System.out.println(request);
+
+		}
+
 	}
 }
