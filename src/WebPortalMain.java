@@ -107,7 +107,7 @@ public class WebPortalMain {
 							System.out.println("Password: ");
 							String passwordN = sd.next();
 							Login userN = sha.nurseLogLin(userNameN, passwordN);
-							if (user.isLoggedin()) {
+							if (userN.isLoggedin()) {
 								
 								do {
 									System.out.println("Please choose");
@@ -130,7 +130,7 @@ public class WebPortalMain {
 											nurseTimeSlot.add(new NurseTimeSlot(AvailableTimeStatusNures.values()[timpeSlotChoice]));
 											
 										} while (timpeSlotChoice != 0);
-										userN.getNurse().setSchedule(nurseTimeSlot);
+									//	userN.getNurse().setSchedule(nurseTimeSlot);
 										break;
 										
 									case 2:
