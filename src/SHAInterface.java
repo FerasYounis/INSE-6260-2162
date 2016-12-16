@@ -14,8 +14,8 @@ public interface SHAInterface {
 	public Patient patientsRegisterting(String firstName, String lastName, String email, String password,
 			Gender patientGender, Location location, String specailCase);
 
-	public Nurse nursesRegisterting(String firstName, String lastName, String email, String password, Gender nurseGender,
-			Location location, List<TypeOfRequest> typeOfRequest, Language language);
+	public Nurse nursesRegisterting(String firstName, String lastName, String email, String password,
+			Gender nurseGender, Location location, List<TypeOfRequest> typeOfRequest, Language language);
 
 	public Login patientLogLin(String userName, String password);
 
@@ -28,9 +28,11 @@ public interface SHAInterface {
 
 	public void matchApp();
 
-	public void cancelApp(String id, String requestID);
+	public void cancelApp(String requestID);
 
-	public void availabilityUpdate(int slot, String status);
+	public void availabilityUpdate(Nurse nurse, int slot, String status);
 
-	public String viewStatus(String loggedin, String requestID);
+	public void viewStatus(String requestID);
+
+	public void viewStatuses();
 }

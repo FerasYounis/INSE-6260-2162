@@ -31,4 +31,9 @@ public class NurseTimeSlot {
 		this.request = request;
 	}
 
+	@Override
+	public String toString() {
+		return "NurseTimeSlot [status=" + status + ", request=" + request + "]";
+	}
+
 }

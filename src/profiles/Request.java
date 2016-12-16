@@ -120,8 +120,8 @@ public class Request {
 	public static void setRequestID(String requestID) {
 		Request.requestID = requestID;
 	}
-	
-	public static String getRequestID(){
+
+	public static String getRequestID() {
 		return requestID;
 	}
 
@@ -141,4 +141,10 @@ public class Request {
 		this.status = status;
 	}
 
+	@Override
+	public String toString() {
+		return "Request [patient=" + patient + ", assignedNurse=" + assignedNurse + ", nurseG=" + nurseG + ", app="
+				+ app + ", severity=" + severity + ", language=" + language + ", typeCareService=" + typeCareService
+				+ ", comment=" + comment + ", status=" + status + "]";
+	}
 }

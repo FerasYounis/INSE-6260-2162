@@ -1,5 +1,6 @@
 package profiles;
 
+import java.util.Arrays;
 import java.util.List;
 
 import Enums.AvailableTimeStatusNures;
@@ -105,12 +106,11 @@ public class Nurse implements Comparable<Nurse> {
 		return count;
 	}
 
+	@Override
 	public String toString() {
-		return "Passenger{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", NurseID='"
-				+ nurseID + '\'' + ", location='" + location + '\'' + ", nurseGender='" + nurseGender + '\''
-				+ ", typeOfRequest='" + typeOfRequest + '\'' + ", email='" + email + '\'' + ", password= ***********'"
-				+ '\'' + '}';
-
+		return "Nurse [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + ", nurseGender=" + nurseGender + ", typeOfRequest=" + typeOfRequest + ", location="
+				+ location + ", schedule=" + Arrays.toString(schedule) + ", language=" + language + "]";
 	}
 
 	public int compareTo(Nurse compareNurse) {
