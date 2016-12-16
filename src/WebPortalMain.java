@@ -24,9 +24,9 @@ public class WebPortalMain {
 		SHAImplementation sha = new SHAImplementation();
 
 		do {
-			
+			try {
 			System.out.println("Welcome to Healthcare Agency\n" + "Please Login if you have a profile with the Agency"
-					+ " or create one\n" + "1.Login enter 1" + "2.Registering enter 2" );
+					+ " or create one\n" + "1.Login enter 1\n" + " 2.Registering enter 2" );
 			Scanner sd = new Scanner(System.in);
 			int num = sd.nextInt();
 			switch (num) {
@@ -34,15 +34,15 @@ public class WebPortalMain {
 				boolean exitPatient = false;
 				boolean exitNurse = false;
 				boolean exitAgency = false;
-				System.out.println("1.Patient");
-				System.out.println("2.Nurse");
-				System.out.println("3.Agency personal");
-				System.out.println("Please choice one!");
+				System.out.println("1.Patient ");
+				System.out.println("2.Nurse ");
+				System.out.println("3.Agency personal ");
+				System.out.println("Please choice one! ");
 				num = sd.nextInt();
 				switch (num) {
 				case 1:
 					
-					System.out.println("Please login");
+					System.out.println("Please login ");
 					System.out.println("UserName: ");
 					String userName = sd.next();
 					System.out.println("Password: ");
@@ -111,11 +111,11 @@ public class WebPortalMain {
 								
 								do {
 									System.out.println("Please choose");
-									System.out.println("1.availability Update");
-									System.out.println("2.View a request status");
-									System.out.println("3.Cancel a request");
-									System.out.println("4.View daily schedule");
-									System.out.println("5.Select 4 to exit Nurse");
+									System.out.println("1.availability Update ");
+									System.out.println("2.View a request status ");
+									System.out.println("3.Cancel a request ");
+									System.out.println("4.View daily schedule ");
+									System.out.println("5.Select 4 to exit Nurse ");
 									int ans2 = sd.nextInt();
 									switch (ans2){
 									case 1:
@@ -232,6 +232,10 @@ public class WebPortalMain {
 				break;
 
 			}
+			}catch(ArithmeticException e){System.out.println(e);}
+		
+
 	}while (!exit);
-}
 	}
+}
+
