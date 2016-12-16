@@ -144,6 +144,8 @@ public class SHAImplementation implements SHAInterface {
 				for (NurseTimeSlot slot : request.getAssignedNurse().getSchedule()) {
 					if (slot.getRequest() == request) {
 						slot.setStatus(AvailableTimeStatusNures.AVAILABLE);
+						System.out.println("The request " + request.getRequestID() 
+						+"has been CANCELED\nRequest Status: " + request.getStatus());
 					}
 				}
 			}

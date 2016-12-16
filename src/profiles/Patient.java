@@ -12,7 +12,7 @@ public class Patient {
 	 * 
 	 */
 
-	private static final long serialVersionUID = -4575375139164741007L;
+	
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -22,11 +22,13 @@ public class Patient {
 	private Location location;
 	private static String patientID;
 	private List<Request> requests;
+	private static int counter = 0;
 
 	public Patient(String firstName, String lastName, String email, String password, Gender patientGender,
 			Location location, String specailCase) {
-
-		patientID = UUID.randomUUID().toString();
+		
+		counter = counter +1;
+		patientID = "P000E0" + String.valueOf(counter);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -78,7 +80,7 @@ public class Patient {
 	}
 
 	public String toString() {
-		return "Passenger{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", patientID='"
+		return "Patient {" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", patientID='"
 				+ patientID + '\'' + ", location='" + location + '\'' + ", patientGender='" + patientGender + '\''
 				+ ", specailCase='" + specailCase + '\'' + ", email='" + email + '\'' + ", password= ***********'"
 				+ '\'' + '}';
