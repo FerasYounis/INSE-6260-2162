@@ -17,28 +17,33 @@ import profiles.Request;
 
 public class WebPortalMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		
 		boolean exit = false;
 		SHAImplementation sha = new SHAImplementation();
 
 		do {
-			try {
+			
+			
 			System.out.println("Welcome to Healthcare Agency\n" + "Please Login if you have a profile with the Agency"
 					+ " or create one\n" + "1.Login enter 1\n" + " 2.Registering enter 2" );
 			Scanner sd = new Scanner(System.in);
 			int num = sd.nextInt();
 			switch (num) {
-			case 1:
+			case 1: 
 				boolean exitPatient = false;
 				boolean exitNurse = false;
 				boolean exitAgency = false;
+				try{
 				System.out.println("1.Patient ");
 				System.out.println("2.Nurse ");
 				System.out.println("3.Agency personal ");
 				System.out.println("Please choice one! ");
 				num = sd.nextInt();
+				}catch (Exception e) {
+	                System.out.println("Error!");
+				}
 				switch (num) {
 				case 1:
 					
@@ -173,8 +178,10 @@ public class WebPortalMain {
 				
 
 			case 2:
+				try{
 				System.out.println("Who are you? \n1.Patient or 2.Nurse?");
 				int WhoAreYou = sd.nextInt();
+				
 				if (WhoAreYou == 1) {
 					System.out.println("Please enter First Name");
 					String firstName = sd.next();
@@ -186,7 +193,7 @@ public class WebPortalMain {
 					System.out.println("What is your Gender: MALE or FEMALE?");
 					String patientGenderstr = sd.next();
 					Gender patientGender = Gender.valueOf(patientGenderstr);
-					System.out.println("Please enter your location" + "Montreal or Laval or South_shore");
+					System.out.println("Please enter your location" + " Montreal or Laval or South_shore");
 					String locationstr = sd.next();
 					Location location = Location.valueOf(locationstr);
 					System.out.println(
@@ -196,6 +203,7 @@ public class WebPortalMain {
 					Patient patient = sha.patientsRegisterting(firstName, lastName, email, password, patientGender,
 							location, specailCase);
 					System.out.println(patient);
+					break;
 				} else if (WhoAreYou == 2) {
 					System.out.println("Please enter First Name");
 					String firstName = sd.next();
@@ -207,7 +215,7 @@ public class WebPortalMain {
 					System.out.println("What is your Gender: MALE or FEMALE?");
 					String nurseGenderstr = sd.next();
 					Gender nurseGender = Gender.valueOf(nurseGenderstr);
-					System.out.println("Please enter your location" + "Montreal or Laval or South_shore");
+					System.out.println("Please enter your location" + " Montreal or Laval or South_shore");
 					String locationstr = sd.next();
 					Location location = Location.valueOf(locationstr);
 					System.out.println("What kind of Request do you serve?");
@@ -222,6 +230,7 @@ public class WebPortalMain {
 						typesOfRequestChoice = sd.nextInt();
 						typesOfRequest.add(TypeOfRequest.values()[typesOfRequestChoice - 1]);
 					} while (typesOfRequestChoice != 0);
+					
 
 					Nurse nurse = sha.nursesRegisterting(firstName, lastName, email, password, nurseGender, location,
 							typesOfRequest, Language.valueOf(language));
@@ -231,11 +240,14 @@ public class WebPortalMain {
 				}
 				break;
 
-			}
-			}catch(ArithmeticException e){System.out.println(e);}
+				}catch (Exception e) {
+	                System.out.println("Error!");}
+				}
+			
+	}while (!exit);
 		
 
-	}while (!exit);
+	
 	}
 }
 

@@ -2,7 +2,7 @@ package Enums;
 
 public enum TypeOfRequest  {
 	
-	BooldCar,
+	BooldCare,
 	SeniorCare,
 	SurgeryRecoveryCare,
 	NewbornCare,

@@ -20,7 +20,7 @@ public class SHATestCases {
 	@Before
 	public void setUp() throws Exception {
 		List<TypeOfRequest> nurseCareTypes1 = new ArrayList<TypeOfRequest>();
-		nurseCareTypes1.add(TypeOfRequest.BooldCar);
+		nurseCareTypes1.add(TypeOfRequest.BooldCare);
 		nurseCareTypes1.add(TypeOfRequest.SeniorCare);
 
 		List<TypeOfRequest> nurseCareTypes2 = new ArrayList<TypeOfRequest>();
@@ -28,7 +28,7 @@ public class SHATestCases {
 		nurseCareTypes2.add(TypeOfRequest.SeniorCare);
 
 		List<TypeOfRequest> nurseCareTypes3 = new ArrayList<TypeOfRequest>();
-		nurseCareTypes3.add(TypeOfRequest.BooldCar);
+		nurseCareTypes3.add(TypeOfRequest.BooldCare);
 		nurseCareTypes3.add(TypeOfRequest.SurgeryRecoveryCare);
 
 		NurseTimeSlot[] schedule1 = new NurseTimeSlot[] { new NurseTimeSlot(AvailableTimeStatusNures.AVAILABLE),
@@ -70,7 +70,7 @@ public class SHATestCases {
 				"");
 		sha.RequestApp(patient1, Gender.FEMALE, TimeSlot.From_1_To_3, "", Language.English, TypeOfRequest.SeniorCare,
 				"");
-		sha.RequestApp(patient1, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English, TypeOfRequest.BooldCar, "");
+		sha.RequestApp(patient1, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English, TypeOfRequest.BooldCare, "");
 		sha.RequestApp(patient1, Gender.MALE, TimeSlot.From_9_To_11, "", Language.French,
 				TypeOfRequest.SurgeryRecoveryCare, "");
 		sha.RequestApp(patient2, Gender.MALE, TimeSlot.From_11_To_1, "", Language.English, TypeOfRequest.NewbornCare,
@@ -78,12 +78,12 @@ public class SHATestCases {
 		sha.RequestApp(patient2, Gender.MALE, TimeSlot.From_1_To_3, "", Language.English, TypeOfRequest.SeniorCare, "");
 		sha.RequestApp(patient2, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English,
 				TypeOfRequest.SurgeryRecoveryCare, "");
-		sha.RequestApp(patient2, Gender.MALE, TimeSlot.From_9_To_11, "", Language.French, TypeOfRequest.BooldCar, "");
+		sha.RequestApp(patient2, Gender.MALE, TimeSlot.From_9_To_11, "", Language.French, TypeOfRequest.BooldCare, "");
 		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_11_To_1, "", Language.English, TypeOfRequest.SeniorCare,
 				"");
 		sha.RequestApp(patient3, Gender.FEMALE, TimeSlot.From_1_To_3, "", Language.English, TypeOfRequest.SeniorCare,
 				"");
-		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English, TypeOfRequest.BooldCar, "");
+		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English, TypeOfRequest.BooldCare, "");
 		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_9_To_11, "", Language.French,
 				TypeOfRequest.SurgeryRecoveryCare, "");
 		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_11_To_1, "", Language.English, TypeOfRequest.NewbornCare,
@@ -92,7 +92,7 @@ public class SHATestCases {
 				"");
 		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_5_To_7, "", Language.English,
 				TypeOfRequest.SurgeryRecoveryCare, "");
-		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_3_To_5, "", Language.French, TypeOfRequest.BooldCar, "");
+		sha.RequestApp(patient3, Gender.MALE, TimeSlot.From_3_To_5, "", Language.French, TypeOfRequest.BooldCare, "");
 
 	}
 
